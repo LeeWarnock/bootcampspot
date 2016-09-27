@@ -13,7 +13,7 @@ var Strategy = require('passport-github').Strategy;
 passport.use(new Strategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'http://localhost:3000/login/github/return'
+    callbackURL: 'http://localhost:1337/login/github/return'
   },
   function(accessToken, refreshToken, profile, cb) {
     // In this example, the user's github profile is supplied as the user
