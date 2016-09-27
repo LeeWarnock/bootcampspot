@@ -1,9 +1,11 @@
 {
   "name": "bootcampspot",
   "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
-  "keywords": [],
+  "version": "0.0.1",
+  "description": "bootcampspot site refactor",
+  "keywords": [
+    "bootcampspot"
+  ],
   "dependencies": {
     "ejs": "2.3.4",
     "grunt": "1.0.1",
@@ -33,6 +35,6 @@
     "type": "git",
     "url": "git://github.com/anonymous node/sails user/bootcampspot.git"
   },
-  "author": "anonymous node/sails user",
-  "license": ""
+  "author": "anonymous node/Lee Warnock",
+  "license": "MIT"
 }
