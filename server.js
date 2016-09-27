@@ -1,23 +1,23 @@
 var express = require('express');
 var passport = require('passport');
-var Strategy = require('passport-facebook').Strategy;
+var Strategy = require('passport-github').Strategy;
 
 
-// Configure the Facebook strategy for use by Passport.
+// Configure the github strategy for use by Passport.
 //
 // OAuth 2.0-based strategies require a `verify` function which receives the
-// credential (`accessToken`) for accessing the Facebook API on the user's
+// credential (`accessToken`) for accessing the github API on the user's
 // behalf, along with the user's profile.  The function must invoke `cb`
 // with a user object, which will be set at `req.user` in route handlers after
 // authentication.
 passport.use(new Strategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'http://localhost:3000/login/facebook/return'
+    callbackURL: 'http://localhost:3000/login/github/return'
   },
   function(accessToken, refreshToken, profile, cb) {
-    // In this example, the user's Facebook profile is supplied as the user
-    // record.  In a production-quality application, the Facebook profile should
+    // In this example, the user's github profile is supplied as the user
+    // record.  In a production-quality application, the github profile should
     // be associated with a user record in the application's database, which
     // allows for account linking and authentication with other identity
     // providers.
@@ -74,11 +74,11 @@ app.get('/login',
     res.render('login');
   });
 
-app.get('/login/facebook',
-  passport.authenticate('facebook'));
+app.get('/login/github',
+  passport.authenticate('github'));
 
-app.get('/login/facebook/return', 
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
+app.get('/login/github/return', 
+  passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
   });
