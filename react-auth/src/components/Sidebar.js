@@ -7,3 +7,5 @@ class SidebarComponent extends Component {
     );
   }
 }
+
+export default SidebarComponent;
