@@ -1,22 +1,34 @@
-require('normalize.css/normalize.css');
-require('styles/App.css');
+import 'normalize.css/normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import React from 'react';
+import React, { Component } from 'react';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import { Grid, Row, Col } from 'react-bootstrap';
 
-let yeomanImage = require('../images/yeoman.png');
+class AppComponent extends Component {
 
-class AppComponent extends React.Component {
+  componentWillMount() {
+    this.lock = new Auth0Lock('tIzXo5cwrgVER823cSlyfFKHAUSV1S8s', 'leewarnock.auth0.com');
+  }
+
   render() {
     return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
+      <div>
+        <Header lock={this.lock}></Header>
+        <Grid>
+          <Row>
+            <Col xs={12} md={3}>
+              <Sidebar />
+            </Col>
+            <Col xs={12} md={9}>
+              {this.props.children}
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
 }
-
-AppComponent.defaultProps = {
-};
 
 export default AppComponent;
