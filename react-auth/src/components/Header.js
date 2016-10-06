@@ -13,3 +13,21 @@ class HeaderComponent extends Component {
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
   }
+
+    login() {
+    // Call the show method from Auth0Lock,
+    // which is passed down as a prop, to allow
+    // the user to log in
+    this.props.lock.show((err, profile, token) => {
+      if (err) {
+        alert(err);
+        return;
+      }
+      this.setState({authenticated: true});
+    });
+  }
+
+    logout() {
+    // AuthActions.logUserOut();
+    this.setState({authenticated: false});
+  }
