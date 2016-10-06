@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//LIST OF CONTACTS WILL BE RENDERED HERE
 class SidebarComponent extends Component {
   render() {
     return (
