@@ -31,3 +31,22 @@ class HeaderComponent extends Component {
     // AuthActions.logUserOut();
     this.setState({authenticated: false});
   }
+
+    render() {
+    return (
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href="#">React Contacts</a>
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Nav>
+          <NavItem onClick={this.login}>Login</NavItem>
+          <NavItem onClick={this.logout}>Logout</NavItem>
+        </Nav>
+      </Navbar>
+    );
+  }
+}
+
+export default HeaderComponent;
