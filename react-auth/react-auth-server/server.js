@@ -8,9 +8,10 @@ app.use(cors());
 // Authentication middleware provided by express-jwt.
 // This middleware will check incoming requests for a valid
 // JWT on any routes that it is applied to.
+//We will change this to query a database
 const authCheck = jwt({
-  secret: new Buffer('YOUR_AUTH0_SECRET', 'base64'),
-  audience: 'YOUR_AUTH0_CLIENT_ID'
+  secret: new Buffer('L6Skl-NecXAmcX3tPj7UIXgLyOsEuDVzH9H4HPV-ExqhNrYARCHqJG3wkqo_Ti47', 'base64'),
+  audience: 'tIzXo5cwrgVER823cSlyfFKHAUSV1S8s'
 });
 
 var contacts = [
