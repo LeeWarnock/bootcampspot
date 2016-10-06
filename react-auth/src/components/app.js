@@ -1,7 +1,10 @@
-require('normalize.css/normalize.css');
-require('styles/App.css');
+import 'normalize.css/normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import React from 'react';
+import React, { Component } from 'react';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 let yeomanImage = require('../images/yeoman.png');
 
