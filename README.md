@@ -1,1 +1,0 @@
-:information_desk_person: [bootCampSpot refactor](https://bootcampspot.herokuapp.com)
